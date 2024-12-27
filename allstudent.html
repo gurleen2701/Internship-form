@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Student</title>
+</head>
+
+<body>
+    <h1>all student data</h1>
+
+    <script>
+        document.getElementsByTagName("h1")[0].innerHTML = "AKANKSHA RANA";
+        fetch("http://localhost:3000")
+            .then((responce) => { return responce.json() })
+            .then((data) => {
+                console.log(data);
+
+                const table = document.createElement('table');
+                const tableBody = document.createElement('tbody');
+
+                data.forEach(person => {
+                    // const row = document.createElement('tr');
+                    // const nameCell = document.createElement('td');
+                    // const emailCell = document.createElement('td');//variable names like name , email 
+                    const row = document.createElement('tr');
+                    const fullNameCell = document.createElement('td');
+                    const dateofBirthCell = document.createElement('td');
+                    const emailCell = document.createElement('td');
+                    const mobileNumberCell = document.createElement('td');
+                    const gendercell = document.createElement('td');
+                    const occupationcell = document.createElement('td');
+                    const idtypecell = document.createElement('td');
+                    const idnumbercell = document.createElement('td');
+                    const issuedAuthoritycell= document.createElement('td');
+                    const issuedstatecell = document.createElement('td');
+                    const issueddatecell = document.createElement('td');
+                    const expirydatecell = document.createElement('td');
+
+
+                    const addressTypecell = document.createElement('td');
+                    const nationalitycell = document.createElement('td');
+                    const statecell = document.createElement('td');
+                    const districtcell = document.createElement('td');
+                    const blockNumbercell = document.createElement('td');
+                    const wardNumbercell = document.createElement('td');
+                    const fatherNamecell = document.createElement('td');
+                    const mothernamecell= document.createElement('td');
+                    const guardianNamecell = document.createElement('td');
+                    const FatherOccupationcell = document.createElement('td');
+                    const MotherOccupationcell = document.createElement('td');
+                    const GuardianOccupationcell = document.createElement('td');
+                    
+
+                    fullNamecell.textContent = person.fname;
+                    dateofBirthcell.textContent = person.dob;
+                    emailcell.textContent = person.email;
+                    mobileNumbercell.textContent = person.phn;
+                    gendercell.textContent = person.gender;
+                    ocuppationcell.textcontent=person.occupation;
+                    idtypecell.textcontent=person.id;
+                    idnumbercell.textcontent=person.idno;
+                    isssuedauthoritycell.textcontent=person.isssuedauthority;
+                    issuedstatecell.textcontent=person.issuestate;
+                    issueddatecell.textcontent=person.date;
+                    expirydatecell.textcontent=person.expdate;
+
+                    // occupationcell.textContent = person.occupation;
+                    // idtypecell.textContent = person.idtype;
+                    // idnumbercell.textContent = person.idnumber;
+                    // issuedAuthoritycell.textContent = person.issuedAuthority;
+                    // stateCell.textContent = person.state;
+                    // dateCell.textContent = person.date;
+                    // expirydatecell.textContent = person.expirydate;
+                   
+                    addressTypecell.textContent = person.address;
+                    nationalitycell.textContent = person.nationality;
+                    statecell.textContent = person.state;
+                    districtcell.textContent = person.district;
+                    blockNumbercell.textContent = person.bno;
+                    wardNumbercell.textContent = person.wno;
+                    fatherNamecell.textContent = person.fname;
+                    mothernamecell.textContent = person.mname;
+                    guardianNamecell.textContent = person.gname;
+                    FatherOccupationcell.textContent = person.focupp;
+                    MotherOccupationcell.textContent = person.mocupp;
+                    GuardianOccupationcell.textContent = person.gocupp;
+                   
+                    row.appendChild(fullNamecell);
+                    row.appendChild(dateofBirthcell);
+                    row.appendChild(emailcell);
+                    row.appendChild(mobileNumberzell);
+                    row.appendChild(gendercell);
+
+                    row.appendChild(occupationcell);
+                    row.appendChild(idtypecell);
+                    row.appendChild(idnumbercell);
+                    row.appendChild(issuedAuthoritycell);
+                    row.appendChild(issuedstateCell);
+                    row.appendChild(issueddateCell);
+                    row.appendChild(expirydatecell);
+
+                    row.appendChild(addressTypecell);
+                    row.appendChild(nationalitycell);
+                    row.appendChild(statecell);
+                    row.appendChild(districtcell);
+                    row.appendChild(blockNumbercell);
+                    row.appendChild(wardNumbercell);
+                    row.appendChild(fatherNamecell);
+                    row.appendChild(mothernamecell);
+                    row.appendChild(guardianNamecell);
+                    row.appendChild(FatherOccupationcell);
+                    row.appendChild(MotherOccupationcell);
+                    row.appendChild(GuardianOccupationcell);
+                    tableBody.appendChild(row);
+                });
+
+                table.appendChild(tableBody);
+                document.body.appendChild(table);
+            })
+    </script>
+</body>
+
+</html>
